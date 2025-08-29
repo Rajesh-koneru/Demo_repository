@@ -5,4 +5,4 @@ def isPalindrome(x: int) -> bool:
             print(int_str[-i])
             reverse_str+=int_str[-i]
 
-isPalindrome(535)
+isPalindrome(976479)
