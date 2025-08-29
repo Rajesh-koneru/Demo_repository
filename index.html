@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Normal JS vs AngularJS Example</title>
+  <!-- Load AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+  <h1>Normal JavaScript Example</h1>
+  <p>Enter your name:</p>
+  <input type="text" id="jsInput" onkeyup="showName()" placeholder="Type here...">
+  <p id="jsOutput"></p>
+
+  <script>
+    function showName() {
+      let name = document.getElementById("jsInput").value;
+      document.getElementById("jsOutput").innerText = "Hello " + name;
+    }
+  </script>
+
+  <hr>
+
+  <h1>AngularJS Example</h1>
+  <!-- Declare Angular App -->
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <p>Enter your name:</p>
+    <!-- ng-model binds input to variable -->
+    <input type="text" ng-model="name" placeholder="Type here...">
+    <!-- Data binding with {{ }} -->
+    <p>Hello {{name}}</p>
+  </div>
+
+  <script>
+    // AngularJS App
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+      $scope.name = "";
+    });
+  </script>
+
+</body>
+</html>
